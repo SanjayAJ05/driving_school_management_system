@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NavTrack - Create Account</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#10b981", // Green primary color from the button/active state
+                        "primary-hover": "#059669",
+                        "background-light": "#f3f4f6", // Light grey for light mode background
+                        "background-dark": "#0f172a", // Deep slate for dark mode background
+                        "card-light": "#ffffff",
+                        "card-dark": "#1e293b", // Slightly lighter slate for card
+                        "input-light": "#f9fafb",
+                        "input-dark": "#334155",
+                        "text-light": "#1f2937",
+                        "text-dark": "#f1f5f9",
+                        "muted-light": "#6b7280",
+                        "muted-dark": "#94a3b8",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }.logo-gradient {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        }
+        .active-role-gradient {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center p-4 transition-colors duration-200">
+<div class="w-full max-w-5xl flex flex-col items-center">
+<div class="w-full flex justify-between items-center mb-8 px-4 max-w-lg mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl logo-gradient flex items-center justify-center shadow-lg">
+<span class="material-icons-outlined text-white text-xl">directions_car</span>
+</div>
+<h1 class="text-2xl font-bold text-text-light dark:text-white tracking-tight">NavTrack</h1>
+</div>
+<button class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-outlined text-sm">dark_mode</span>
+</button>
+</div>
+<div class="w-full max-w-lg mx-auto mb-8 px-4">
+<div class="flex justify-between text-sm font-medium mb-2">
+<span class="text-text-light dark:text-white">Step 1 of 3</span>
+<span class="text-muted-light dark:text-muted-dark">Account Details</span>
+</div>
+<div class="flex gap-2">
+<div class="h-1.5 flex-1 bg-primary rounded-full"></div>
+<div class="h-1.5 flex-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+<div class="h-1.5 flex-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+</div>
+</div>
+<div class="w-full max-w-lg bg-card-light dark:bg-card-dark rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 p-6 md:p-8">
+<div class="mb-6">
+<h2 class="text-xl font-bold text-text-light dark:text-white mb-1">Create Account</h2>
+<p class="text-sm text-muted-light dark:text-muted-dark">Select Your Role</p>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800 p-1.5 rounded-xl flex mb-6 relative">
+<button class="flex-1 flex flex-col items-center justify-center py-2 px-4 rounded-lg active-role-gradient text-white shadow-sm transition-all relative z-10">
+<span class="material-icons-outlined text-lg mb-0.5">school</span>
+<span class="text-xs font-semibold">Student</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center py-2 px-4 rounded-lg text-muted-light dark:text-muted-dark hover:text-text-light dark:hover:text-white transition-colors">
+<span class="material-icons-outlined text-lg mb-0.5">person_outline</span>
+<span class="text-xs font-medium">Instructor</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center py-2 px-4 rounded-lg text-muted-light dark:text-muted-dark hover:text-text-light dark:hover:text-white transition-colors">
+<span class="material-icons-outlined text-lg mb-0.5">admin_panel_settings</span>
+<span class="text-xs font-medium">Admin</span>
+</button>
+</div>
+<form action="#" class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-text-light dark:text-gray-300 ml-1">Full Name</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-icons-outlined text-muted-light dark:text-gray-500 text-lg">person</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2.5 bg-input-light dark:bg-input-dark border border-gray-200 dark:border-gray-600 rounded-xl text-sm text-text-light dark:text-white placeholder-muted-light dark:placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Enter your full name" type="text"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-text-light dark:text-gray-300 ml-1">Email ID</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-icons-outlined text-muted-light dark:text-gray-500 text-lg">email</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2.5 bg-input-light dark:bg-input-dark border border-gray-200 dark:border-gray-600 rounded-xl text-sm text-text-light dark:text-white placeholder-muted-light dark:placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Enter your email" type="email"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-text-light dark:text-gray-300 ml-1">Phone Number</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-icons-outlined text-muted-light dark:text-gray-500 text-lg">phone</span>
+</div>
+<input class="w-full pl-10 pr-4 py-2.5 bg-input-light dark:bg-input-dark border border-gray-200 dark:border-gray-600 rounded-xl text-sm text-text-light dark:text-white placeholder-muted-light dark:placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Enter your phone number" type="tel"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-text-light dark:text-gray-300 ml-1">Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-icons-outlined text-muted-light dark:text-gray-500 text-lg">lock</span>
+</div>
+<input class="w-full pl-10 pr-10 py-2.5 bg-input-light dark:bg-input-dark border border-gray-200 dark:border-gray-600 rounded-xl text-sm text-text-light dark:text-white placeholder-muted-light dark:placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Create a password" type="password"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
+<span class="material-icons-outlined text-muted-light dark:text-gray-500 text-lg">visibility</span>
+</div>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-text-light dark:text-gray-300 ml-1">Confirm Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-icons-outlined text-muted-light dark:text-gray-500 text-lg">lock</span>
+</div>
+<input class="w-full pl-10 pr-10 py-2.5 bg-input-light dark:bg-input-dark border border-gray-200 dark:border-gray-600 rounded-xl text-sm text-text-light dark:text-white placeholder-muted-light dark:placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Confirm your password" type="password"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
+<span class="material-icons-outlined text-muted-light dark:text-gray-500 text-lg">visibility</span>
+</div>
+</div>
+</div>
+<div class="pt-2 flex items-start">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 border border-gray-300 dark:border-gray-600 rounded bg-input-light dark:bg-input-dark text-primary focus:ring-primary focus:ring-offset-0" id="terms" type="checkbox"/>
+</div>
+<label class="ml-2 text-xs text-muted-light dark:text-gray-400" for="terms">
+                        I agree to the <a class="text-primary hover:underline font-medium" href="#">Terms &amp; Conditions</a> and <a class="text-primary hover:underline font-medium" href="#">Privacy Policy</a>
+</label>
+</div>
+<button
+  type="button"
+  onclick="window.location.href='personaldetail.html'"
+  class="w-full bg-primary hover:bg-primary-hover text-white font-semibold py-3 px-4 rounded-xl shadow-lg shadow-green-500/20 dark:shadow-green-500/10 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 mt-6"
+>
+  Continue
+  <span class="material-icons-outlined text-sm">arrow_forward</span>
+</button>
+
+
+
+</form>
+<div class="mt-6 text-center">
+<p class="text-xs text-muted-light dark:text-gray-400">
+                    Already have an account? 
+                    <a class="text-primary font-bold hover:underline ml-1" href="#">Login</a>
+</p>
+</div>
+</div>
+</div>
+<script>
+        // Check for dark mode preference at the OS level
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body></html>

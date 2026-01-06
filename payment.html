@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment - NavTrack Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1E88E5",
+                        secondary: "#F5F5F5",
+                        accent: "#424242",
+                    },
+                    fontFamily: {
+                        sans: ["Roboto", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e0e0e0;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #bdbdbd;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased h-screen overflow-hidden">
+
+
+
+<div class="flex h-screen w-full">
+<aside class="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700">
+
+
+
+<div class="h-16 flex items-center px-6 border-b border-gray-200">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">local_taxi</span>
+</div>
+<h1 class="font-bold text-xl tracking-wide text-gray-900">NavTrack</h1>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-6 px-3 space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors group" href="dashboard.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-medium">Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors group" href="schedule.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">calendar_month</span>
+<span class="font-medium">Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors group" href="lessondetail.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">school</span>
+<span class="font-medium">Lessons</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined fill-1">payments</span>
+<span class="font-medium">Payments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors group" href="profile.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">person</span>
+<span class="font-medium">Profile</span>
+</a>
+</nav>
+<div class="p-4 border-t border-gray-200">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-red-500 hover:bg-red-50 transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium">Logout</span>
+</a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col h-full min-w-0 bg-white relative">
+<header class="h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between px-6 shrink-0 z-20">
+
+<div class="flex items-center gap-4">
+<button class="md:hidden text-gray-500 hover:text-gray-900 transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-lg font-medium text-gray-900">Secure Checkout</h2>
+</div>
+<div class="flex items-center gap-4 sm:gap-6">
+<button aria-label="Toggle color mode" class="text-gray-500 hover:text-gray-900 transition-colors rounded-full p-1 hover:bg-gray-100">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button class="text-gray-500 hover:text-gray-900 transition-colors relative rounded-full p-1 hover:bg-gray-100">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-gray-200">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-medium text-gray-900">Alex Mitchell</p>
+<p class="text-xs text-gray-500">Student</p>
+</div>
+<div class="h-9 w-9 rounded-full overflow-hidden border border-gray-200 ring-2 ring-transparent hover:ring-primary/50 transition-all cursor-pointer">
+<img alt="Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkzv1vTziCLNaAa6dXj2FK3nRX66LwusJuUdiz6Nk54pghamkx8qKiy5RGo0C96e-Lk9UCHqcXGK1llKhMZSItN6t1mGf65EJhD-KGopsg6raSQa9T6JENaTBbQWdwyGlX2TomjqgeAzd2gSpRg_6DfqV3pOdqYBi4f2p-ic4Mx7cgr9HJK8Cf-jRHLB41FgSp_1DczFLB-x22r3KcIa22MsOqHVSFtFjEzD2LxrpZ_BUnuaHH-XHvwVvw5736Z6J7yd0Rfl68ifY"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-6 lg:p-8 bg-white dark:bg-gray-900">
+
+
+
+<div class="max-w-7xl mx-auto h-full flex flex-col">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<div class="lg:col-span-8 space-y-6">
+<div class="flex flex-col gap-1">
+<h1 class="text-2xl font-bold text-gray-900">Payment Details</h1>
+<p class="text-gray-500 text-sm">Choose a payment method and enter your details securely.</p>
+</div>
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+<div class="flex border-b border-gray-200 overflow-x-auto">
+<button class="flex-1 py-4 px-4 min-w-[120px] text-center border-b-2 border-primary bg-primary/5 text-primary font-medium text-sm flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+<span class="whitespace-nowrap">Credit Card</span>
+</button>
+<button class="flex-1 py-4 px-4 min-w-[120px] text-center border-b-2 border-transparent text-gray-500 hover:text-gray-900 hover:bg-gray-50 font-medium text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="whitespace-nowrap">Wallet / UPI</span>
+</button>
+<button class="flex-1 py-4 px-4 min-w-[120px] text-center border-b-2 border-transparent text-gray-500 hover:text-gray-900 hover:bg-gray-50 font-medium text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+<span class="whitespace-nowrap">Net Banking</span>
+</button>
+</div>
+<div class="p-6 lg:p-8">
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700">Card Number</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">credit_card</span>
+<input class="w-full bg-gray-50 border border-gray-300 rounded-lg py-3 pl-12 pr-12 text-gray-900 placeholder-gray-400 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="0000 0000 0000 0000" type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 flex gap-2 opacity-40 grayscale">
+<div class="w-8 h-5 bg-gray-400 rounded"></div>
+<div class="w-8 h-5 bg-gray-400 rounded"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700">Expiration Date</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">calendar_today</span>
+<input class="w-full bg-gray-50 border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-900 placeholder-gray-400 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="MM / YY" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700">CVV / CVC</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full bg-gray-50 border border-gray-300 rounded-lg py-3 pl-12 pr-10 text-gray-900 placeholder-gray-400 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="123" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg cursor-help hover:text-gray-600 transition-colors" title="3 digits on back">help</span>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-gray-700">Cardholder Name</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">person</span>
+<input class="w-full bg-gray-50 border border-gray-300 rounded-lg py-3 pl-12 pr-4 text-gray-900 placeholder-gray-400 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="John Doe" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3 pt-2">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 cursor-pointer appearance-none rounded border border-gray-300 bg-gray-50 checked:bg-primary checked:border-primary transition-all" id="save-card" type="checkbox"/>
+<span class="material-symbols-outlined absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 peer-checked:opacity-100 pointer-events-none text-sm">check</span>
+</div>
+<label class="text-sm text-gray-600 cursor-pointer select-none hover:text-gray-900 transition-colors" for="save-card">Save card for future payments</label>
+</div>
+</form>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-start gap-6 px-2 opacity-80">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-green-600 text-xl">lock</span>
+<span class="text-xs font-bold text-gray-500">SSL ENCRYPTED</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-600 text-xl">verified_user</span>
+<span class="text-xs font-bold text-gray-500">SECURE PAYMENT</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-white rounded-xl border border-gray-200 p-6 shadow-lg sticky top-6">
+<h3 class="text-lg font-bold text-gray-900 mb-6">Order Summary</h3>
+<div class="space-y-4 mb-6">
+<div class="flex items-start gap-3">
+<div class="bg-gray-50 p-2 rounded-lg text-primary shrink-0 border border-gray-200">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-semibold text-gray-900">Beginner Package</p>
+<p class="text-xs text-gray-500 mt-0.5">10 lessons + 1 test</p>
+</div>
+<div class="text-sm font-semibold text-gray-900">$450.00</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="bg-gray-50 p-2 rounded-lg text-gray-500 shrink-0 border border-gray-200">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div class="flex-1 pt-1">
+<p class="text-sm font-medium text-gray-900">Service Fee</p>
+</div>
+<div class="text-sm font-medium text-gray-900 pt-1">$15.00</div>
+</div>
+</div>
+<div class="h-px bg-gray-200 w-full mb-6"></div>
+<div class="flex items-end justify-between mb-8">
+<div>
+<p class="text-sm text-gray-500">Total Amount</p>
+</div>
+<div class="text-3xl font-bold text-gray-900 tracking-tight">$465.00</div>
+</div>
+<button class="w-full bg-primary hover:bg-[#1976D2] text-white font-bold py-3.5 rounded-lg shadow-lg shadow-blue-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">lock</span>
+<span>Pay $465.00</span>
+</button>
+<p class="text-center text-xs text-gray-500 mt-4">
+                                By proceeding, you agree to our <a class="text-primary hover:underline" href="#">Terms</a>.
+                            </p>
+</div>
+<div class="bg-gray-50 rounded-xl p-4 border border-gray-200 flex items-start gap-4">
+<div class="bg-white p-2 rounded-lg text-primary shrink-0 border border-gray-200 shadow-sm">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<p class="text-sm font-bold text-gray-900">Need Help?</p>
+<p class="text-xs text-gray-500 mt-1 leading-relaxed">
+                                    Contact support at <a class="text-primary hover:underline transition-colors" href="mailto:support@navtrack.com">support@navtrack.com</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+<script>
+  const toggleBtn = document.querySelector('[aria-label="Toggle color mode"]');
+  const html = document.documentElement;
+
+  // Load saved mode
+  if (localStorage.getItem('theme') === 'dark') {
+    html.classList.add('dark');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    html.classList.toggle('dark');
+
+    if (html.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
+
+</body></html>

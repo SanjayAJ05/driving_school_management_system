@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NavTrack - Driving School Management</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#36e27b",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                        "surface-dark": "#1c3024",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111714] dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col selection:bg-primary selection:text-background-dark">
+<!-- Navigation Bar -->
+<header class="w-full z-50 sticky top-0 border-b border-gray-200 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto h-20 flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-xl bg-primary flex items-center justify-center text-background-dark shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-2xl">directions_car</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">NavTrack</h2>
+</div>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">Features</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<a class="hidden sm:block text-sm font-bold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">
+                    Login
+                </a>
+<button class="flex items-center justify-center h-10 px-6 rounded-full bg-surface-dark dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 text-sm font-bold transition-colors md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<button class="hidden md:flex items-center justify-center h-10 px-6 rounded-full bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold shadow-lg shadow-primary/20 transition-all transform active:scale-95">
+                    Start Free Trial
+                </button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<main class="flex-grow flex items-center justify-center relative overflow-hidden">
+<!-- Background Decor -->
+<div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+<!-- Left Content: Text & CTA -->
+<div class="flex-1 flex flex-col items-start gap-8 z-10 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    New Version 2.0
+                </div>
+<div class="flex flex-col gap-4">
+<h1 class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]">
+                        Drive Smart. <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 dark:from-white dark:to-gray-500">Track Progress.</span> <br/>
+<span class="text-primary">Achieve More.</span>
+</h1>
+<p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        The all-in-one management platform for modern driving schools. streamline scheduling, track student progress, and optimize your fleet with NavTrack.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+<a href="login.html"
+   class="w-full sm:w-auto h-14 px-8 rounded-full bg-primary text-background-dark text-base font-bold flex items-center justify-center gap-2 hover:bg-[#2fd16f] transition-all shadow-[0_0_20px_rgba(54,226,123,0.3)] hover:shadow-[0_0_30px_rgba(54,226,123,0.5)] transform hover:-translate-y-1">
+  
+  <span>Get Started</span>
+  <span class="material-symbols-outlined text-xl">arrow_forward</span>
+
+</a>
+
+
+
+<button class="w-full sm:w-auto h-14 px-8 rounded-full bg-transparent border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white text-base font-bold flex items-center justify-center gap-2 hover:bg-gray-100 dark:hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined filled">play_circle</span>
+<span>Watch Demo</span>
+</button>
+</div>
+<div class="flex items-center gap-4 pt-4 opacity-80 justify-center lg:justify-start">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-background-light dark:border-background-dark bg-gray-300 bg-cover bg-center" data-alt="User avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2fzN_msWL0xYYYRIauGJd1hdrx2Wa5EfHK1L-5e_q6pwBdAFKTdtQTQei2URgNmXNXrb_-h2ZE8K8MucpknW5hVQDu1unUXY8PM8cz5z_brZII-0jtyb9ohS0Ey5aWuzwfVlrQxYQBvGOzwMqSZ-v_-dPbBZJxVnE3GfftYUEYyHbIA3VjJLDYMdpeWJLFjl-ViCOxtiBEh3v5sTUhBHbdc4dPb17ZEPpKAFq70yN3H2chOkCuyaIlQzG-Cogi2b07LM9owgj58g');"></div>
+<div class="w-10 h-10 rounded-full border-2 border-background-light dark:border-background-dark bg-gray-300 bg-cover bg-center" data-alt="User avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDutGtQgZQPgGZM3LNSrCXDIVNi_dzzUndyrcs44IZkUCRj7DHYeljYNMyOFJFzQfmWvaB9YloqbHUr8kXBzJr6v6ly2xXqSVdaHHdZ7D1syJY7m_LGf8jExu2LtWEuuqzoXtlyHl2hP3vICqJ8zVLKjcMPzJG0oSYLK9KbyZ0m_NPegxwIwaSqJAcPFdHfVb0FKI8tF3HHHzbA3xBRv2Ps_PGn_-f27UrfrqgMFH0Ke4yZIhfdc1y4tgdh4XVITK05Hkat56E1enM');"></div>
+<div class="w-10 h-10 rounded-full border-2 border-background-light dark:border-background-dark bg-gray-300 bg-cover bg-center" data-alt="User avatar 3" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3N3WAwgaX-rXiSMcpn56EBJeQvPTjwldB7bcC9I40YgIdUvWHp30sC7AbEtS94EIiSTumheaU3rbyqKyw-zaS1vbPlmyOKWs2gSIQ9nbW5oDt2RazX6OmvloxGT9ZRQMrdT6mKsGIze8w7JGG6mcwPDaJo9i7Yg4u4O0kl-jELogQQTYO4k7nS0lcNE5iRvFLSwH20YrVfRu9YU1Yu2b9fRENYcsO3Un-J_o92ivR8R341drjekY8hYXOqhWjexWlufW6-WuWrd4');"></div>
+</div>
+<div class="flex flex-col text-sm">
+<div class="flex items-center gap-1 text-yellow-400">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<span class="text-gray-500 dark:text-gray-400 font-medium">Trusted by 500+ schools</span>
+</div>
+</div>
+</div>
+<!-- Right Content: Visual -->
+<div class="flex-1 w-full max-w-[600px] lg:max-w-none relative z-10">
+<div class="relative aspect-square sm:aspect-[4/3] lg:aspect-square w-full flex items-center justify-center">
+<!-- Decorative Background Circle behind car -->
+<div class="absolute inset-0 m-auto w-[80%] h-[80%] rounded-full border border-primary/20 bg-gradient-to-tr from-surface-dark to-transparent opacity-50"></div>
+<div class="absolute inset-0 m-auto w-[60%] h-[60%] rounded-full border border-primary/10 animate-[spin_10s_linear_infinite]"></div>
+<!-- Main Car Visual -->
+<div class="relative z-10 w-full h-full rounded-3xl overflow-hidden shadow-2xl border border-white/5 bg-surface-dark group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern dark car in a cinematic studio lighting environment representing the fleet management feature" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAViJuqPVu7gN9rfHeI4GddoeSyIWHZhKZ-dp604-ure5GWMHskX3bqKWd4pcYdSVfM2aKSpw1N3S286RnOmorC1P5mhoF-HzgIgJh44pKWNgvkgV9hH6iUxiqMj46tZ_b_zbSjNQyQReS1snfpFgH8ycqhOscjNv7KGXaLwenjPlHom2rPOEdu4wL3RhtzcP4P-12hyUz0ssihjvYONlW2TS4B-yhFzy5rASLzEpAZA1mE4Mz0s0TGQekPJIEzCe6wspJCw6SciQA');">
+</div>
+<!-- Floating UI Card 1: Stats -->
+<div class="absolute top-8 left-8 bg-white/10 backdrop-blur-md border border-white/10 p-4 rounded-xl flex items-center gap-3 shadow-lg animate-[bounce_3s_infinite]">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<div>
+<p class="text-xs text-gray-300">Avg. Speed</p>
+<p class="text-lg font-bold text-white">45 km/h</p>
+</div>
+</div>
+<!-- Floating UI Card 2: Location -->
+<div class="absolute bottom-8 right-8 bg-background-dark/80 backdrop-blur-md border border-white/10 p-4 rounded-xl flex flex-col gap-2 shadow-lg max-w-[200px]">
+<div class="flex items-center justify-between text-xs text-gray-400">
+<span>Next Lesson</span>
+<span class="text-primary">10:00 AM</span>
+</div>
+<div class="h-24 rounded-lg overflow-hidden relative w-full">
+<div class="w-full h-full bg-cover bg-center opacity-80" data-alt="Map showing a city street route" data-location="City Map View" style="background-image: url('https://placeholder.pics/svg/300');">
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl drop-shadow-md" style="font-variation-settings: 'FILL' 1">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-gray-200 dark:border-white/10 bg-background-light dark:bg-background-dark py-12">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+<span class="font-bold text-lg">NavTrack</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">Cookie Policy</a>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-600">
+                    © 2024 NavTrack Inc. All rights reserved.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>

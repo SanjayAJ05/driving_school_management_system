@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson Details - NavTrack</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0EA5E9",
+                        secondary: "#14B8A6",
+                        "background-light": "#F3F4F6",
+                        "background-dark": "#0B1120",
+                        "card-dark": "#1E293B",
+                        "card-lighter": "#2A3855",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': '1.25rem',
+                        '2xl': '1.5rem',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(14, 165, 233, 0.15)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #4B5563;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #6B7280;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-background-dark font-body text-gray-800 dark:text-gray-100 min-h-screen transition-colors duration-200 overflow-x-hidden">
+<div class="flex min-h-screen">
+<aside class="hidden lg:flex flex-col w-72 bg-white dark:bg-[#1E293B] border-r border-gray-200 dark:border-gray-700 h-screen fixed left-0 top-0 z-30 transition-all duration-300">
+<div class="flex items-center gap-3 px-8 h-24">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+<span class="material-icons-round text-white text-xl">directions_car</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">NavTrack</h1>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-4 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3.5 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-xl hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group" href="dashboard.html">
+<span class="material-icons-round text-2xl group-hover:text-primary transition-colors">home</span>
+                    Home
+                </a>
+<a class="flex items-center gap-4 px-4 py-3.5 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-xl hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group" href="schedule.html">
+<span class="material-icons-round text-2xl group-hover:text-primary transition-colors">calendar_today</span>
+                    Schedule
+                </a>
+<a class="flex items-center gap-4 px-4 py-3.5 text-sm font-bold text-primary bg-blue-50 dark:bg-blue-500/10 rounded-xl shadow-sm border border-blue-100 dark:border-transparent" href="#">
+<span class="material-icons-round text-2xl">school</span>
+                    Lessons
+                </a>
+<a class="flex items-center gap-4 px-4 py-3.5 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-xl hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group" href="payment.html">
+<span class="material-icons-round text-2xl group-hover:text-primary transition-colors">credit_card</span>
+                    Payments
+                </a>
+<a class="flex items-center gap-4 px-4 py-3.5 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-xl hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group" href="#">
+<span class="material-icons-round text-2xl group-hover:text-primary transition-colors">person</span>
+                    Profile
+                </a>
+</nav>
+<div class="p-6 border-t border-gray-100 dark:border-gray-700/50">
+<a class="flex items-center gap-4 px-4 py-3 text-sm font-medium text-gray-500 dark:text-gray-400 rounded-xl hover:bg-red-50 hover:text-red-500 dark:hover:bg-red-900/10 dark:hover:text-red-400 transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">logout</span>
+                    Logout
+                </a>
+</div>
+</aside>
+<div class="flex-1 flex flex-col lg:pl-72 w-full">
+<header class="sticky top-0 z-20 bg-gray-50/90 dark:bg-background-dark/90 backdrop-blur-md px-8 py-5 flex justify-between items-center lg:justify-end">
+<button class="lg:hidden p-2 -ml-2 text-gray-600 dark:text-gray-300">
+<span class="material-icons-round text-2xl">menu</span>
+</button>
+<div class="flex items-center space-x-2 sm:space-x-6">
+<button class="p-2.5 rounded-full hover:bg-white dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-all hover:shadow-sm" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined dark:hidden text-xl">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block text-xl">light_mode</span>
+</button>
+<button class="relative p-2.5 rounded-full hover:bg-white dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-all hover:shadow-sm group">
+<span class="material-symbols-outlined text-xl group-hover:text-gray-700 dark:group-hover:text-gray-200">notifications</span>
+<span class="absolute top-2 right-2.5 h-2 w-2 bg-red-500 rounded-full border border-gray-50 dark:border-background-dark"></span>
+</button>
+<div class="flex items-center gap-3 pl-2 sm:pl-6 sm:border-l border-gray-200 dark:border-gray-700">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-gray-900 dark:text-white leading-none">Alex Morgan</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Student</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden border-2 border-white dark:border-gray-600 shadow-sm">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAciusb76B5gHPQ8K0FknJ35BwdJpAgY0mcx9xISTUmZqpveaYzqIVPVvagRbx14YtmOTay0dIHY4Ha07GrYbjXr96aHf829V3JmvpIcXLXjuxGxYsSFjQgwVDZz2_vrY_7rukghPOpaGsqAQxxQPIzeIv8SAfh4SOzvTUBedHdzBc6NGLO5-W1cGfCC4P7U06WBfa0YNWlFU4w5F8Onqega0_hPlapGdIgmUu3ZTv7eui7vKSq8pNgnzjpkTTg9fFE9Ujb6FQgbWk"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 px-4 sm:px-8 pb-10 max-w-[1600px] w-full mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h2 class="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">Lesson Details</h2>
+<p class="text-gray-500 dark:text-gray-400 mt-2">Manage your driving lessons efficiently</p>
+</div>
+<div class="flex items-center space-x-3 bg-white dark:bg-gray-800 p-1.5 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+<button class="px-5 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">edit_calendar</span>
+                            Reschedule
+                        </button>
+<button class="px-5 py-2.5 text-sm font-medium text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/30 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">cancel</span>
+                            Cancel Lesson
+                        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+<div class="xl:col-span-8 space-y-8">
+<div class="bg-white dark:bg-[#1E293B] rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-700 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
+<div class="flex items-start gap-6">
+<div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center shadow-lg shadow-teal-500/20 flex-shrink-0">
+<span class="material-icons-round text-white text-4xl">directions_car</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<h3 class="text-2xl font-bold text-gray-900 dark:text-white">Practical Lesson</h3>
+<span class="px-3 py-1 text-xs font-bold text-blue-600 bg-blue-50 dark:bg-blue-900/30 dark:text-blue-300 rounded-md border border-blue-100 dark:border-blue-800">Upcoming</span>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-base mb-6 max-w-md">Standard driving session focusing on core vehicle control and traffic maneuvering.</p>
+<div class="flex flex-wrap gap-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+<span class="material-icons-round text-xl">event</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wider">Date</p>
+<p class="text-sm font-bold text-gray-900 dark:text-gray-200">March 12, 2025</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+<span class="material-icons-round text-xl">schedule</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wider">Time</p>
+<p class="text-sm font-bold text-gray-900 dark:text-gray-200">08:00 - 09:00 AM <span class="text-gray-400 font-normal">(1h)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden md:flex flex-col items-center justify-center p-6 bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-100 dark:border-gray-700/50 min-w-[160px]">
+<div class="relative w-20 h-20 mb-3">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-gray-200 dark:text-gray-700" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-primary" cx="40" cy="40" fill="transparent" r="36" stroke="currentColor" stroke-dasharray="226" stroke-dashoffset="180" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-lg font-bold text-gray-900 dark:text-white">2<span class="text-gray-400 text-sm">/10</span></span>
+</div>
+</div>
+<span class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Lessons Done</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1E293B] rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-700">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Lesson Overview</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Key focus areas for this session</p>
+<div class="flex flex-wrap gap-4">
+<span class="px-5 py-3 rounded-xl bg-blue-50 dark:bg-[#2A3855] text-blue-700 dark:text-blue-300 font-semibold text-sm border border-blue-100 dark:border-transparent">Braking control</span>
+<span class="px-5 py-3 rounded-xl bg-blue-50 dark:bg-[#2A3855] text-blue-700 dark:text-blue-300 font-semibold text-sm border border-blue-100 dark:border-transparent">Turning</span>
+<span class="px-5 py-3 rounded-xl bg-blue-50 dark:bg-[#2A3855] text-blue-700 dark:text-blue-300 font-semibold text-sm border border-blue-100 dark:border-transparent">Reverse</span>
+<span class="px-5 py-3 rounded-xl bg-blue-50 dark:bg-[#2A3855] text-blue-700 dark:text-blue-300 font-semibold text-sm border border-blue-100 dark:border-transparent">Traffic rules</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1E293B] rounded-2xl p-8 shadow-sm border border-gray-200 dark:border-gray-700">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6">Location Details</h3>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex items-start gap-5 mb-6">
+<div class="w-14 h-14 rounded-full bg-teal-50 dark:bg-teal-900/20 flex items-center justify-center flex-shrink-0 border border-teal-100 dark:border-teal-900/30">
+<span class="material-icons-round text-teal-600 dark:text-teal-400 text-2xl">location_on</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider mb-1">Meeting Point</p>
+<h4 class="text-lg font-bold text-gray-900 dark:text-white leading-tight">Navtraq Training Center, Chennai</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">No. 45, Anna Salai, Chennai - 600002</p>
+</div>
+</div>
+<button class="w-full md:w-auto px-6 py-3 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all font-semibold text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">map</span>
+                                        Open in Maps
+                                    </button>
+</div>
+<div class="w-full md:w-80 h-48 bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden relative border border-gray-200 dark:border-gray-700 shadow-inner">
+<img alt="Map Preview" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVzBwQBYsBp-lAmHg5QAtuozN9Q2CuZ7bAap5a_PPKZMsNGbCzughXmQLQR4I265yfhMaGcSuOZbxbxD_kvw_MPl-TZA-pLfXoSRLE9RFofB_jRBQsLvlVnw4ydpbwaVIPidHkACvuPNt_k1uzDl7ziYly6lpCtX_TrM9acCL3KvBl3L8RkesjcUW62hYsqGUzroIoTc3DSi_8rzJGtMIZ1iQNpp16PKlvcUYgcrWe8YT0SQJDQXI67cIcOBWN0hNarE8vLMMnB6E"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="w-4 h-4 bg-red-500 rounded-full animate-ping absolute"></span>
+<span class="w-4 h-4 bg-red-500 rounded-full relative border-2 border-white shadow-md"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-4 space-y-8">
+<div class="bg-white dark:bg-[#1E293B] rounded-2xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-6">Instructor</h3>
+<div class="flex items-center gap-5 mb-6">
+<div class="relative">
+<img alt="Instructor" class="w-20 h-20 rounded-full object-cover border-4 border-gray-50 dark:border-gray-700 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcHDjwvOzRrifKcCw4JQ1vAdu0XWciQXtgOjTm0o3OWLOWw5_dwTPBamazW8PggNr-rhG716GUiQyxWLCsWmbDazjtEy0ZjDSO5bT0I1xh8MFbY9Rk63vzOVSGb7p91bu9XJAJkbHDRPdDQVvDSi5i75bQAF2p-O0Y7jOFMmwPhA6qIwk3BcFCpM7XG1ZuEjZHw0BHMhF5v01MBaUFBeTiWyQeKHLTa0sbQzv0IA0PAgvJVNObc6vFiDY9GZfi_c0AMazJdb3onzk"/>
+<div class="absolute bottom-1 right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white dark:border-gray-800"></div>
+</div>
+<div>
+<h4 class="text-xl font-bold text-gray-900 dark:text-white">Mr. Ramesh Kumar</h4>
+<p class="text-sm text-gray-500 dark:text-gray-400">8+ years experience</p>
+<div class="flex items-center gap-1.5 mt-2 bg-yellow-50 dark:bg-yellow-900/20 w-fit px-2 py-0.5 rounded-md border border-yellow-100 dark:border-transparent">
+<span class="material-icons-round text-yellow-500 text-sm">star</span>
+<span class="text-sm font-bold text-gray-800 dark:text-yellow-100">4.8</span>
+<span class="text-xs text-gray-500 dark:text-yellow-200/70 ml-1">(156 reviews)</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl text-center border border-gray-100 dark:border-gray-700/50">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wide">Languages</p>
+<p class="text-sm font-bold text-gray-900 dark:text-white">Eng, Tam</p>
+</div>
+<div class="p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl text-center border border-gray-100 dark:border-gray-700/50">
+<p class="text-xs text-gray-500 dark:text-gray-400 mb-1 uppercase tracking-wide">Vehicle</p>
+<p class="text-sm font-bold text-gray-900 dark:text-white">Swift Dzire</p>
+</div>
+</div>
+<button class="w-full py-3.5 bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-semibold rounded-xl shadow-lg shadow-teal-500/25 transition-all mb-3">
+                                View Instructor Profile
+                            </button>
+<button class="w-full py-3.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-semibold rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400">chat</span>
+                                Message Instructor
+                            </button>
+</div>
+<div class="bg-gradient-to-br from-[#6366f1] to-[#8b5cf6] rounded-2xl p-8 text-white shadow-xl shadow-indigo-500/20 relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-8 -bottom-8 text-[10rem] text-white opacity-10 rotate-12">verified_user</span>
+<h3 class="text-xl font-bold mb-6 relative z-10">Safety First</h3>
+<ul class="space-y-4 text-sm relative z-10">
+<li class="flex items-start gap-3">
+<div class="p-1 rounded-full bg-white/20">
+<span class="material-icons-round text-sm">check</span>
+</div>
+<span class="font-medium text-white/90 pt-0.5">Wear comfortable footwear</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="p-1 rounded-full bg-white/20">
+<span class="material-icons-round text-sm">check</span>
+</div>
+<span class="font-medium text-white/90 pt-0.5">Bring your learner's license</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="p-1 rounded-full bg-white/20">
+<span class="material-icons-round text-sm">check</span>
+</div>
+<span class="font-medium text-white/90 pt-0.5">Arrive 10 minutes early</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-[#1E293B] border-t border-gray-200 dark:border-gray-800 pb-safe z-50">
+<div class="flex justify-between items-center px-6 py-3">
+<a class="flex flex-col items-center" href="#">
+<span class="material-icons-round text-gray-400 dark:text-gray-500 text-2xl">home</span>
+<span class="text-[10px] font-medium text-gray-400 dark:text-gray-500 mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center" href="#">
+<span class="material-icons-round text-gray-400 dark:text-gray-500 text-2xl">calendar_today</span>
+<span class="text-[10px] font-medium text-gray-400 dark:text-gray-500 mt-1">Schedule</span>
+</a>
+<a class="flex flex-col items-center" href="#">
+<span class="material-icons-round text-primary text-2xl">school</span>
+<span class="text-[10px] font-medium text-primary mt-1">Lessons</span>
+</a>
+<a class="flex flex-col items-center" href="#">
+<span class="material-icons-round text-gray-400 dark:text-gray-500 text-2xl">credit_card</span>
+<span class="text-[10px] font-medium text-gray-400 dark:text-gray-500 mt-1">Payments</span>
+</a>
+<a class="flex flex-col items-center" href="#">
+<span class="material-icons-round text-gray-400 dark:text-gray-500 text-2xl">person</span>
+<span class="text-[10px] font-medium text-gray-400 dark:text-gray-500 mt-1">Profile</span>
+</a>
+</div>
+</div>
+<script>
+        // Check for dark mode preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+             document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</body></html>

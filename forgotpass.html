@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forgot Password - Driving School Management</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#10b981", // Emerald green from the button
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#0f172a", // Deep slate blue
+                        "card-dark": "rgba(30, 41, 59, 0.7)", // Semi-transparent slate
+                        "accent-cyan": "#0ea5e9", // Light blue for shield
+                        "accent-green-badge": "#22c55e", // Green for lock badge
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem", // 12px
+                        "2xl": "1.5rem", // 24px
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(16, 185, 129, 0.15)',
+                    }
+                },
+            },
+        };
+    </script>
+<script>
+        document.documentElement.classList.add('dark');
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col items-center justify-center font-sans antialiased relative overflow-hidden transition-colors duration-300">
+<div class="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/10 dark:bg-blue-600/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+<div class="absolute top-20 right-20 text-gray-200 dark:text-slate-800 opacity-10 dark:opacity-20 pointer-events-none rotate-12">
+<span class="material-icons-round text-9xl">directions_car</span>
+</div>
+<div class="absolute bottom-20 left-20 text-gray-200 dark:text-slate-800 opacity-10 dark:opacity-10 pointer-events-none -rotate-12">
+<span class="material-icons-round text-8xl">help_outline</span>
+</div>
+<main class="w-full max-w-md px-6 z-10">
+<div class="bg-white dark:bg-slate-800/80 dark:backdrop-blur-xl shadow-2xl rounded-3xl p-8 border border-gray-100 dark:border-slate-700 relative overflow-hidden">
+<div class="flex justify-center mb-6 relative">
+<div class="relative">
+<div class="w-20 h-20 bg-sky-100 dark:bg-accent-cyan rounded-full flex items-center justify-center shadow-lg">
+<span class="material-icons-round text-4xl text-sky-600 dark:text-white">security</span>
+</div>
+<div class="absolute top-0 right-0 translate-x-1 -translate-y-1 w-8 h-8 bg-green-100 dark:bg-accent-green-badge rounded-full flex items-center justify-center border-2 border-white dark:border-slate-800 shadow-sm">
+<span class="material-icons-round text-sm text-green-600 dark:text-white">lock</span>
+</div>
+</div>
+</div>
+<div class="text-center mb-8">
+<h1 class="font-display text-2xl font-bold text-gray-900 dark:text-white mb-3">Forgot Password?</h1>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed px-4">
+                    Enter your registered email or phone number to receive a reset link.
+                </p>
+</div>
+<form action="#" class="space-y-6" onsubmit="event.preventDefault();">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-icons-round text-gray-400 group-focus-within:text-primary transition-colors">mail_outline</span>
+</div>
+<input class="w-full pl-11 pr-4 py-3.5 bg-gray-50 dark:bg-white text-gray-900 rounded-xl border-gray-200 dark:border-transparent focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder-gray-400 font-medium" placeholder="Email or phone number" type="text"/>
+</div>
+<button class="w-full py-3.5 bg-primary hover:bg-emerald-600 text-white font-semibold rounded-xl shadow-glow transition-all transform active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
+<span class="material-icons-round text-lg -rotate-45 mb-1">send</span>
+                    Send Reset Link
+                </button>
+<div class="text-center">
+<a class="inline-flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors" href="login.html">
+<span class="material-icons-round text-lg">arrow_back</span>
+                        Back to Login
+                    </a>
+</div>
+<div class="pt-2">
+<div class="h-px w-full bg-gray-200 dark:bg-slate-700/50 mb-6"></div>
+<div class="flex items-start gap-3 bg-blue-50 dark:bg-slate-700/30 p-3 rounded-lg">
+<span class="material-icons-round text-sky-500 dark:text-sky-400 text-lg mt-0.5">info</span>
+<p class="text-xs text-gray-600 dark:text-gray-400 leading-tight">
+                            We will never share your information with anyone.
+                        </p>
+</div>
+</div>
+</form>
+</div>
+<div class="mt-8 text-center">
+<p class="text-sm text-gray-500 dark:text-gray-400">
+                Need help? 
+                <a class="text-primary hover:text-emerald-400 font-medium ml-1 transition-colors" href="#">Contact Support</a>
+</p>
+</div>
+</main>
+
+</body></html>

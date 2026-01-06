@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - Drive Smart System</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#36e27b",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                        "surface-dark": "#1c2620",
+                        "border-dark": "#29382f",
+                        "text-secondary": "#9eb7a8",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white h-screen w-full overflow-hidden flex">
+<!-- Left Side: Brand & Visuals -->
+<div class="hidden lg:flex w-1/2 h-full relative flex-col justify-between p-12 bg-surface-dark border-r border-border-dark">
+<!-- Background Image/Overlay -->
+<div class="absolute inset-0 z-0 opacity-40">
+<img alt="Driving background" class="w-full h-full object-cover grayscale" data-alt="Dark abstract view of a road and dashboard at night, representing driving" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTxJ5wfz8LxcntHlTBKNwaRvZJ-HFveJP1TdNi_LsZ_5Ft4Edcx7iOuAr5i-02uKqqV_P_9x_iPPmG3CsR0MGdjLmyShi0S_0NrSxJbBgN26RA5bAb_3wNj9HeY7Gmnz2qyR7yz4yVsR-6f7snHazKrBBr4o3Vk5pZ__1nB8pbFP0mN_NHXKniKn5GJ2VN5doKUrwSoSkd3ksuhS5eVqS9XTujErDLUQ1muui5yrV3_Jt1CIyMfbbdND8YlQO3T-V9gphWF-QVOrs"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background-dark/80 via-background-dark/50 to-background-dark"></div>
+</div>
+<!-- Header -->
+<div class="relative z-10 flex items-center gap-3">
+<div class="size-10 flex items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-[24px]">directions_car</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight text-white">Drive Smart System</h2>
+</div>
+<!-- Middle Content -->
+<div class="relative z-10 max-w-md space-y-6">
+<h1 class="text-5xl font-bold leading-tight tracking-tight text-white">
+                Master the road with confidence.
+            </h1>
+<p class="text-xl text-text-secondary">
+                Join thousands of students and instructors managing their driving journey efficiently.
+            </p>
+</div>
+<!-- Footer / Trust Indicators -->
+<div class="relative z-10">
+<div class="flex items-center gap-8 border-t border-border-dark pt-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="text-sm font-medium text-text-secondary">Secure</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<span class="text-sm font-medium text-text-secondary">24/7 Access</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">thumb_up</span>
+<span class="text-sm font-medium text-text-secondary">Trusted</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Login Form -->
+<div class="w-full lg:w-1/2 h-full flex flex-col overflow-y-auto bg-background-light dark:bg-background-dark">
+<!-- Mobile Header (Visible only on small screens) -->
+<div class="lg:hidden flex items-center justify-between p-6 border-b border-border-dark">
+<div class="flex items-center gap-3">
+<div class="size-8 flex items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined text-[20px]">directions_car</span>
+</div>
+<h2 class="text-lg font-bold text-white">Drive Smart</h2>
+</div>
+</div>
+<div class="flex-1 flex items-center justify-center p-6 sm:p-12">
+<div class="w-full max-w-[480px] flex flex-col gap-8">
+<!-- Heading -->
+<div class="flex flex-col gap-2">
+<h2 class="text-4xl font-black leading-tight tracking-[-0.033em] text-slate-900 dark:text-white">Welcome Back</h2>
+<p class="text-slate-500 dark:text-text-secondary text-base font-normal">Drive Smart. Track Progress. Achieve More.</p>
+</div>
+<!-- Role Selector -->
+<div class="w-full">
+<div class="flex h-12 w-full items-center justify-center rounded-full bg-slate-200 dark:bg-surface-dark p-1">
+<label class="group flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm transition-all duration-200">
+<span class="text-slate-500 dark:text-text-secondary group-has-[:checked]:text-slate-900 dark:group-has-[:checked]:text-white text-sm font-medium leading-normal truncate">Student</span>
+<input checked="" class="hidden" name="role" type="radio" value="Student"/>
+</label>
+<label class="group flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm transition-all duration-200">
+<span class="text-slate-500 dark:text-text-secondary group-has-[:checked]:text-slate-900 dark:group-has-[:checked]:text-white text-sm font-medium leading-normal truncate">Instructor</span>
+<input class="hidden" name="role" type="radio" value="Instructor"/>
+</label>
+<label class="group flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm transition-all duration-200">
+<span class="text-slate-500 dark:text-text-secondary group-has-[:checked]:text-slate-900 dark:group-has-[:checked]:text-white text-sm font-medium leading-normal truncate">Admin</span>
+<input class="hidden" name="role" type="radio" value="Admin"/>
+</label>
+</div>
+</div>
+<!-- Form Inputs -->
+<div class="flex flex-col gap-5">
+<!-- Email -->
+<label class="flex flex-col gap-2">
+<span class="text-slate-900 dark:text-white text-base font-medium">Email</span>
+<input class="w-full rounded-xl border border-slate-300 dark:border-border-dark bg-white dark:bg-surface-dark h-14 px-4 text-base placeholder:text-slate-400 dark:placeholder:text-text-secondary text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="student@example.com" type="email"/>
+</label>
+<!-- Password -->
+<label class="flex flex-col gap-2">
+<span class="text-slate-900 dark:text-white text-base font-medium">Password</span>
+<div class="relative flex items-center">
+<input class="w-full rounded-xl border border-slate-300 dark:border-border-dark bg-white dark:bg-surface-dark h-14 pl-4 pr-12 text-base placeholder:text-slate-400 dark:placeholder:text-text-secondary text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="Enter your password" type="password"/>
+<button class="absolute right-4 text-slate-400 dark:text-text-secondary hover:text-slate-600 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+</label>
+<!-- Remember & Forgot -->
+<div class="flex items-center justify-between">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="rounded border-slate-300 dark:border-border-dark bg-white dark:bg-surface-dark text-primary focus:ring-primary/50 size-4" type="checkbox"/>
+<span class="text-sm font-medium text-slate-600 dark:text-text-secondary">Remember me</span>
+</label>
+<a class="text-sm font-medium text-primary hover:text-primary/80 transition-colors" href="forgotpass.html">Forgot password?</a>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4">
+<button
+  type="button"
+  onclick="window.location.href='dashboard.html'"
+  class="w-full h-14 rounded-full bg-primary text-background-dark text-lg font-bold hover:bg-primary/90 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 shadow-lg shadow-primary/20">
+  
+  Sign In
+</button>
+
+
+
+<!-- Divider -->
+<div class="flex items-center gap-4 py-2">
+<div class="h-px flex-1 bg-slate-200 dark:bg-border-dark"></div>
+<span class="text-sm text-slate-400 dark:text-text-secondary font-medium">or continue with</span>
+<div class="h-px flex-1 bg-slate-200 dark:bg-border-dark"></div>
+</div>
+<!-- Social Buttons -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex h-12 items-center justify-center gap-2 rounded-full border border-slate-300 dark:border-border-dark bg-transparent hover:bg-slate-50 dark:hover:bg-surface-dark transition-colors">
+<img alt="Google logo" class="size-5" data-alt="Google G Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi2rKEkREIk4ZE8eAiyGrSxqycw68fG5wuPTNSYVkenWSv4fg6_OhDbEKE49XGF3e6gKVmJBnVr-nIsQlBnLecn-QjDpkaUTFcBHn_WcKz-pno5IfWTBoJDRQuG8Tq3qQBdcRZ4rBWhf3JRcXq7i90CKN8Jo9r_atiKxjahV4Lj-g3LHqQupWxGm_yg1pQ5iP3dGD1NoXeUiHri8bVPRNtTbcwBor557oqqR8eIteO8hS5-oPy5mPyPdFfTkHIBWHpXQ4DWXRaddY"/>
+<span class="text-slate-700 dark:text-white text-sm font-medium">Google</span>
+</button>
+<button class="flex h-12 items-center justify-center gap-2 rounded-full border border-slate-300 dark:border-border-dark bg-transparent hover:bg-slate-50 dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-white text-[22px]">ios</span> <!-- Using icon as proxy for logo -->
+<span class="text-slate-700 dark:text-white text-sm font-medium">Apple</span>
+</button>
+</div>
+</div>
+<!-- Sign Up Footer -->
+<div class="text-center">
+<p class="text-slate-500 dark:text-text-secondary text-base">
+                        Don't have an account? 
+                        <a class="font-bold text-primary hover:underline decoration-2 underline-offset-4" href="Createacc.html">Sign up for free</a>
+</p>
+</div>
+<!-- Trust Indicators (Mobile Only) -->
+<div class="lg:hidden flex items-center justify-center gap-6 border-t border-slate-200 dark:border-border-dark pt-6 mt-2">
+<div class="flex items-center gap-1.5 opacity-80">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="text-xs font-medium text-slate-500 dark:text-text-secondary">Secure</span>
+</div>
+<div class="flex items-center gap-1.5 opacity-80">
+<span class="material-symbols-outlined text-primary text-[18px]">schedule</span>
+<span class="text-xs font-medium text-slate-500 dark:text-text-secondary">24/7 Access</span>
+</div>
+<div class="flex items-center gap-1.5 opacity-80">
+<span class="material-symbols-outlined text-primary text-[18px]">thumb_up</span>
+<span class="text-xs font-medium text-slate-500 dark:text-text-secondary">Trusted</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
